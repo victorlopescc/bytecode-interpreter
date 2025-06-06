@@ -1,8 +1,8 @@
 # bytecode-interpreter
 
 ## Project Structure
-
-bytecode_vm/
+```
+bytecode-interpreter/
 │
 ├── main.py                Entry point of the interpreter
 ├── vm_state.py            Defines the VM state: stack, memory, pc, labels and call stack.
@@ -18,3 +18,4 @@ bytecode_vm/
 ├── utils.py               Utilities like parsing and labels
 │
 └──  inputs/               Directory for bytecode input files
+```
