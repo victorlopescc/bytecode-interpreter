@@ -8,7 +8,7 @@ from instructions.functions_io import exec_io, exec_function
 from optimizer import apply_const_folding
 
 
-INPUT_FILE = "inputs/bytecode_5.txt"
+INPUT_FILE = "inputs/bytecode_8.txt"
 
 
 def interpret(bytecode_lines):
