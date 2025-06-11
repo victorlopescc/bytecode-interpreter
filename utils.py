@@ -5,7 +5,4 @@ def preprocess_labels(bytecode_lines):
         if line.endswith(":"):
             label = line[:-1].strip()
             labels[label] = idx
-            continue
-        if not line or line.startswith("#"):
-            continue
     return labels

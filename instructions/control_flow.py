@@ -1,7 +1,12 @@
 def resolve_target(arg, labels):
     if arg in labels:
         return labels[arg]
-    raise KeyError(f"Unknown label: {arg}")
+    try:
+        address = int(arg)
+        line_index = address // 4  # ← regra do professor
+        return line_index
+    except ValueError:
+        raise KeyError(f"Label desconhecida ou endereço inválido: {arg}")
 
 
 def exec_jump(instr, args, stack, labels, pc):
