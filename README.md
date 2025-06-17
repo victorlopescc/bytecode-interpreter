@@ -1,5 +1,3 @@
-# bytecode-interpreter
-
 ## Project Structure
 ```
 bytecode-interpreter/
@@ -10,9 +8,9 @@ bytecode-interpreter/
 ├── instructions/          Contains instruction-specific modules
 │   ├── arithmetic.py      Arithmetic instructions: ADD, SUB, MUL, DIV, MOD, NEG
 │   ├── variables.py       Variable instructions: STORE, LOAD
-│   ├── control_flow.py    Control flow: JMP, JZ, JNZ, HALT
+│   ├── control_flow.py    Control flow: JMP, JZ, JNZ, CALL, RET, HALT
 │   ├── comparison.py      Comparisons: EQ, NEQ, LT, GT, LE, GE
-│   └── functions_io.py    Functions and I/O: CALL, RET, PRINT, READ
+│   └── functions_io.py    Functions and I/O: PRINT, READ
 │
 ├── optimizer.py           Optimizes bytecode using constant folding
 ├── utils.py               Utilities like parsing and labels
