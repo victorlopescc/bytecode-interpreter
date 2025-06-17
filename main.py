@@ -14,6 +14,12 @@ logging.basicConfig(level=logging.INFO, format="%(message)s")
 
 
 def execute_instruction(instr, args, state):
+    """
+    Executes a single instruction in the virtual machine.
+    :param instr: The instruction to execute.
+    :param args: The arguments for the instruction, such as operands or labels.
+    :param state: The current state of the virtual machine.
+    """
     if instr == "PUSH":
         state.stack.append(int(args[0]))
     elif instr == "POP":
@@ -30,8 +36,8 @@ def execute_instruction(instr, args, state):
         state.pc = exec_jump(instr, args, state.stack, state.labels, state.pc)
         return True
     elif instr in ["CALL"]:
-        state.call_stack.append(state.pc + 1)
-        target = resolve_target(args[0], state.labels)
+        state.call_stack.append(state.pc + 1)  # Salva o endereço de retorno na pilha de chamadas
+        target = resolve_target(args[0], state.labels)  # Resolve o rótulo para o endereço de destino
         state.pc = target
         return True
     elif instr in ["RET"]:
@@ -45,6 +51,10 @@ def execute_instruction(instr, args, state):
 
 
 def interpret(bytecode_lines):
+    """
+    Interprets the bytecode lines and executes them in the virtual machine.
+    :param bytecode_lines: List of bytecode lines to interpret.
+    """
     state = VMState()
     bytecode_lines = apply_const_folding(bytecode_lines)
     state.labels = preprocess_labels(bytecode_lines)
@@ -73,10 +83,10 @@ if __name__ == "__main__":
     input_file = filedialog.askopenfilename(title="Select Bytecode File", filetypes=[("Text Files", "*.txt")])
 
     if not input_file:
-        print("No file selected. Exiting.")
+        logging.error("No file selected.")
         exit(1)
 
     with open(input_file, "r", encoding="utf-8") as f:
-        bytecode = f.readlines()
+        bytecode = f.readlines()  # Carrega o bytecode do arquivo
 
-    interpret(bytecode)
+    interpret(bytecode)  # Interpreta o bytecode
