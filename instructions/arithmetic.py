@@ -8,7 +8,11 @@ def exec_arithmetic(instr, stack):
     elif instr == "MUL":
         stack.append(a * b)
     elif instr == "DIV":
-        stack.append(a // b)
+        try:
+            stack.append(a // b)
+        except ZeroDivisionError:
+            print("Zero Division Detected, 0 is added in the stack.")
+            stack.append(0)
     elif instr == "MOD":
         stack.append(a % b)
 
