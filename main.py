@@ -69,7 +69,7 @@ def interpret(bytecode_lines):
         instr = parts[0]
         args = parts[1:]
 
-        logging.info(f"PC: {state.pc}, Instruction: {instr}, Stack: {state.stack}")
+        logging.info(f"PC: {state.pc}, Instruction: {instr}, Stack: {state.stack}, Memory: {state.memory}")
         result = execute_instruction(instr, args, state)
         if result is False:
             break
