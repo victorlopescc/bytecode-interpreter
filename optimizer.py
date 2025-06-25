@@ -44,7 +44,7 @@ def apply_const_folding(bytecode_lines):
             op = bytecode_lines[i + 2].strip()
             try:
                 folded = try_fold(op, int(a), int(b))  # Tenta realizar a operação se ambos forem constantes
-                logging.log(logging.DEBUG, f"Folding: {a} {op} {b} -> {folded}")
+                print(f"Folding: {a} {op} {b} -> {folded}")
                 optimized.append(f"PUSH {folded}")
                 i += 3
                 continue
