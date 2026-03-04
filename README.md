@@ -1,4 +1,21 @@
-## Project Structure
+# Bytecode Interpreter 🧠
+
+Interpretador de **bytecode** desenvolvido durante a disciplina de **Compiladores**.
+
+O projeto simula o funcionamento de uma máquina virtual (VM), executando instruções a partir de arquivos de entrada contendo bytecode.
+
+## 📌 Sobre o Projeto
+
+O interpretador foi projetado para:
+
+- Executar instruções baseadas em pilha (stack-based VM)
+- Controlar fluxo de execução (saltos, chamadas de função, etc.)
+- Manipular variáveis e memória
+- Realizar operações aritméticas e comparações
+- Executar entrada e saída (I/O)
+- Aplicar otimizações simples como *constant folding*
+
+## 🏗 Estrutura do Projeto
 ```
 bytecode-interpreter/
 │
@@ -17,3 +34,21 @@ bytecode-interpreter/
 │
 └──  inputs/               Directory for bytecode input files
 ```
+
+## ⚙️ Funcionalidades
+
+- 🧮 Operações aritméticas
+- 🔀 Controle de fluxo
+- 📦 Manipulação de variáveis
+- 🔁 Chamadas de função com call stack
+- 📉 Otimização de bytecode
+- 🖨 Entrada e saída
+
+## 🎯 Objetivo
+
+O principal objetivo foi compreender na prática:
+
+- Funcionamento de uma máquina virtual
+- Execução de bytecode
+- Organização modular de instruções
+- Aplicação de técnicas simples de otimização
