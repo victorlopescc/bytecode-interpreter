@@ -1,7 +1,3 @@
-## Authors:
-- Lucas Augusto Azevedo - 712433
-- Victor Lopes Azevedo Araujo - 746030
-
 ## Project Structure
 ```
 bytecode-interpreter/
